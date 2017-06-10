@@ -1,6 +1,7 @@
 package com.codecool.krk20161.javase.model;
 
 
+import com.codecool.krk20161.javase.exception.AlreadyInCatalogException;
 import com.codecool.krk20161.javase.util.BookSearch;
 
 import java.util.ArrayList;
@@ -29,7 +30,10 @@ public class Catalog implements BookSearch{
         return (ArrayList<Book>) books;
     }
 
-    public void add(Book book) {
+    public void add(Book book) throws AlreadyInCatalogException {
+        if (books.stream().anyMatch(x -> x.getTitle().equals(book.getTitle())))
+            throw new AlreadyInCatalogException();
+        books.add(book);
     }
 
     public void remove(Book bookToRemove) {
