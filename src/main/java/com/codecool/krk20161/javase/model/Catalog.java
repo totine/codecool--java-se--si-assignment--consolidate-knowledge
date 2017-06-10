@@ -6,6 +6,7 @@ import com.codecool.krk20161.javase.util.BookSearch;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class Catalog implements BookSearch{
@@ -18,7 +19,7 @@ public class Catalog implements BookSearch{
 
     @Override
     public List<Book> searchByTitle(String title) {
-        return null;
+        return books.stream().filter(x -> x.getTitle().equals(title)).collect(Collectors.toCollection(ArrayList::new));
     }
 
     @Override
