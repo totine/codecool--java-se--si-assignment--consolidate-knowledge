@@ -24,7 +24,7 @@ public class Catalog implements BookSearch{
 
     @Override
     public List<Book> searchByAuthor(Author author) {
-        return null;
+        return books.stream().filter(x -> x.getAuthor().getName().equals(author.getName())).collect(Collectors.toCollection(ArrayList::new));
     }
 
     public ArrayList<Book> getBooks() {
