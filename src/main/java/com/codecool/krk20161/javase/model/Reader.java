@@ -13,9 +13,13 @@ public class Reader implements BookSearch {
 
 
     public Reader(String name) {
+        this.name = name;
+        this.read = new ArrayList<>();
     }
 
     public Reader(String name, List<Book> read) {
+        this.name = name;
+        this.read = (ArrayList<Book>) read;
     }
 
     @Override
