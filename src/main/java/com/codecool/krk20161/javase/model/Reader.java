@@ -4,9 +4,7 @@ import com.codecool.krk20161.javase.util.BookSearch;
 
 import java.util.List;
 
-/**
- * Created by joanna on 05.06.17.
- */
+
 public class Reader implements BookSearch {
 
 
