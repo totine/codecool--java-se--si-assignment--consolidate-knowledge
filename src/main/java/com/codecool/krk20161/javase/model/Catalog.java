@@ -9,7 +9,11 @@ import java.util.List;
 
 public class Catalog implements BookSearch{
     
-    private ArrayList<Book> books;
+    private List<Book> books;
+
+    public Catalog() {
+        books = new ArrayList<>();
+    }
 
     @Override
     public List<Book> searchByTitle(String title) {
@@ -22,7 +26,7 @@ public class Catalog implements BookSearch{
     }
 
     public ArrayList<Book> getBooks() {
-        return books;
+        return (ArrayList<Book>) books;
     }
 
     public void add(Book book) {
