@@ -38,5 +38,15 @@ public class Catalog implements BookSearch{
     }
 
     public void remove(Book bookToRemove) {
+        String bookToRemoveTitle = bookToRemove.getTitle();
+        String bookToRemoveAuthorName = bookToRemove.getAuthor().getName();
+        for (int i=0; i<books.size(); i++) {
+            if (books.get(i).getTitle().equals(bookToRemoveTitle)
+                    && books.get(i).getAuthor().getName().equals(bookToRemoveAuthorName)) {
+                books.remove(i);
+                break;
+            }
+        }
+
     }
 }
